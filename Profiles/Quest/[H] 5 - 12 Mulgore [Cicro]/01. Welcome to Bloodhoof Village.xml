@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasCompletedQuest('The Hunt Begins', 747) == false">
+<ShadowProfile Condition="Data.HasCompletedQuest('Rite of Vision', 767) == false">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -20,7 +20,7 @@
     <SetEnableIgnoreLootAroundMobs Value="true"/>
     <SetEnablePreemptiveMonsterAttack Value="true"/>
 	<SetEnableAutoLoot Value="true" />
-	<Lua>SetCVar("instantQuestText", "1"); print("Instant Quest Text On");</Lua>
+
 
 	<!-- Rest Settings -->
 	<!-- Rogue -->	
@@ -71,10 +71,10 @@
 	<SetUseDrinkPercent Value="50" />
 	<SetUseFoodPercent Value="69" />
     </If>
-	<!-- Shaman -->
+	<!-- Paladin -->
 	<If Condition="Data.PlayerClass() == WoWClass.Shaman">
 	<SetRestHPPercent Value="65" />
-	<SetRestPWPercent Value="15" />
+	<SetRestPWPercent Value="30" />
 	<SetRestPetHPPercent Value="0" />
 	<SetUseDrinkPercent Value="50" />
 	<SetUseFoodPercent Value="69" />
@@ -97,8 +97,8 @@
     </If>	
 	<!-- Rest Settings End -->
 	<!-- Vendors to use -->
-	<SetVendorNpc NpcName="Bronk Steelrage" />
-	<SetRepairNpc NpcName="Bronk Steelrage" />
+	<SetVendorNpc NpcName="Harant Ironbrace" />
+	<SetRepairNpc NpcName="Harant Ironbrace" />
 
 	<!-- Restock Mulgore 1-5 -->
 	<SetEnableRestockItems Value="true"/>
@@ -109,75 +109,41 @@
 
 	<!-- Bullets/Arrows -->
 	<If Condition="IsEquippedItemType('Gun') == true and Data.PlayerClass() == WoWClass.Hunter">
-		<AddRestockItem ItemName="Light Shot" NpcName="Kawnie Softbreeze" UnderAmount="100" BuyAmount="600"/>
+		<AddRestockItem ItemName="Light Shot" NpcName="Moorat Longstride" UnderAmount="100" BuyAmount="600"/>
 	</If>
 	<If Condition="IsEquippedItemType('Bow') == true and Data.PlayerClass() == WoWClass.Hunter">
-		<AddRestockItem ItemName="Rough Arrow" NpcName="Kawnie Softbreeze" UnderAmount="100" BuyAmount="600"/>
+		<AddRestockItem ItemName="Rough Arrow" NpcName="Moorat Longstride" UnderAmount="100" BuyAmount="600"/>
 	</If>
 	<If Condition="IsEquippedItemType('Crossbow') == true and Data.PlayerClass() == WoWClass.Hunter">
-		<AddRestockItem ItemName="Rough Arrow" NpcName="Kawnie Softbreeze" UnderAmount="100" BuyAmount="600"/>
+		<AddRestockItem ItemName="Rough Arrow" NpcName="Moorat Longstride" UnderAmount="100" BuyAmount="600"/>
 	</If>
 	<!-- End Restock -->
 
-	<If Condition="Data.HasActiveQuest('The Hunt Begins', 747) == false and Data.HasCompletedQuest('The Hunt Begins', 747) == false">
-		<TakeQuest NpcName="Grull Hawkwind" QuestId="747" QuestName="The Hunt Begins" />
+	<If Condition="Data.HasActiveQuest('Sharing the Land', 745) == false and Data.HasCompletedQuest('Sharing the Land', 745) == false">
+		<TakeQuest NpcName="Baine Bloodhoof" QuestId="745" QuestName="Sharing the Land" />
 	</If>
-	<If Condition="Data.HasActiveQuest('A Humble Task', 752) == false and Data.HasCompletedQuest('A Humble Task', 752) == false">
-		<TakeQuest NpcName="Chief Hawkwind" QuestId="752" QuestName="A Humble Task" />
+	<If Condition="Data.HasActiveQuest('Rite of Vision', 767) == false and Data.HasCompletedQuest('Rite of Vision', 767) == false">
+		<TakeQuest NpcName="Baine Bloodhoof" QuestId="767" QuestName="Rite of Vision" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Dwarven Digging', 746) == false and Data.HasCompletedQuest('Dwarven Digging', 746) == false">
+		<TakeQuest NpcName="Baine Bloodhoof" QuestId="746" QuestName="Dwarven Digging" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Dangers of the Windfury', 743) == false and Data.HasCompletedQuest('Dangers of the Windfury', 743) == false">
+		<TakeQuest NpcName="Ruul Eagletalon" QuestId="743" QuestName="Dangers of the Windfury" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Poison Water', 748) == false and Data.HasCompletedQuest('Poison Water', 748) == false">
+		<TakeQuest NpcName="Mull Thunderhorn" QuestId="748" QuestName="Poison Water" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Swoop Hunting', 761) == false and Data.HasCompletedQuest('Swoop Hunting', 761) == false">
+		<TakeQuest NpcName="Harken Windtotem" QuestId="761" QuestName="Swoop Hunting" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Mazzranache', 766) == false and Data.HasCompletedQuest('Mazzranache', 766) == false">
+		<TakeQuest NpcName="Maur Raincaller" QuestId="766" QuestName="Mazzranache" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Rite of Vision', 767) == true and Data.AllQuestObjectivesAreComplete('Rite of Vision', 767) == true">
+		<ReturnQuest NpcName="Zarlman Two-Moons" QuestId="767" QuestName="Rite of Vision" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Rite of Vision', 771) == false and Data.HasCompletedQuest('Rite of Vision', 771) == false">
+		<TakeQuest NpcName="Zarlman Two-Moons" QuestId="771" QuestName="Rite of Vision" />
 	</If>	
-	<If Condition="Data.HasActiveQuest('The Hunt Begins', 747) == true and Data.AllQuestObjectivesAreComplete('The Hunt Begins', 747) == false">
-		<!-- Objective Settings -->
-		<ClearHotspots />
-		<SetTargetingMode Mode="Around Points" />
-		<!-- Monsterfilter -->
-		<ClearMonsterFilter/>
-		<!-- Blackspots -->
-		<!-- Hotspots -->
-		<AddHotspot X="-3047.4765625" Y="-403.12359619141" Z="37.805587768555" Range="200" />
-		<While Condition="Data.AllQuestObjectivesAreComplete('The Hunt Begins', 747) == false" >
-			<Wait Value="100" />
-		</While>
-	</If>
-
-		<!-- Objective Settings -->
-		<ClearHotspots />
-		<SetTargetingMode Mode="Around Points" />
-		<!-- Monsterfilter -->
-		<ClearMonsterFilter/>
-		<!-- Blackspots -->
-		<!-- Hotspots -->
-		<AddHotspot X="-3047.4765625" Y="-403.12359619141" Z="37.805587768555" Range="200" />
-		<While Condition="UnitLevel('player') &lt; 2 or UnitXP('player') &lt;= 400 and UnitXPMax('player') == 900" >
-			<Wait Value="100" />
-		</While>
-
-
-	<If Condition="Data.HasActiveQuest('A Humble Task', 752) == true and Data.AllQuestObjectivesAreComplete('A Humble Task', 752) == true">
-		<ReturnQuest NpcName="Greatmother Hawkwind" QuestId="752" QuestName="A Humble Task" />
-	</If>
-	<If Condition="Data.HasActiveQuest('A Humble Task', 753) == false and Data.HasCompletedQuest('A Humble Task', 753) == false">
-		<TakeQuest NpcName="Greatmother Hawkwind" QuestId="753" QuestName="A Humble Task" />
-	</If>
-	<If Condition="Data.HasActiveQuest('A Humble Task', 753) == true and Data.AllQuestObjectivesAreComplete('A Humble Task', 753) == false">
-		<!-- Objective Settings -->
-		<SetTargetingMode Mode="Gather Only" />
-		<SetEnableAutoHerb Value="true" />
-		<!-- QuestObjectsID -->
-		<Lua>QuestNodes[2907]=0</Lua>
-		<!-- QuestObjects -->
-		<AllowQuestNode NodeName="Water Pitcher" />
-		<!-- Blackspots -->
-		<!-- Hotspots -->
-		<AddHotspot X="-3055.2412109375" Y="-533.23034667969" Z="26.899082183838" Range="25" />
-		<While Condition="Data.AllQuestObjectivesAreComplete('A Humble Task', 753) == false" >
-			<Wait Value="100" />
-		</While>
-	</If>
-	<If Condition="Data.HasActiveQuest('The Hunt Begins', 747) == true and Data.AllQuestObjectivesAreComplete('The Hunt Begins', 747) == true">
-		<ReturnQuest NpcName="Grull Hawkwind" QuestId="747" QuestName="The Hunt Begins" />
-	</If>		
-	<If Condition="Data.HasActiveQuest('A Humble Task', 753) == true and Data.AllQuestObjectivesAreComplete('A Humble Task', 753) == true">
-		<ReturnQuest NpcName="Chief Hawkwind" QuestId="753" QuestName="A Humble Task" />
-	</If>
-	
 </ShadowProfile>
