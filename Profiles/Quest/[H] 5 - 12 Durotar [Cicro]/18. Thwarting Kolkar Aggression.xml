@@ -119,59 +119,21 @@
 	<If Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == false and Data.HasCompletedQuest('Thwarting Kolkar Aggression', 786) == false">
 		<TakeQuest NpcName="Lar Prowltusk" QuestId="786" QuestName="Thwarting Kolkar Aggression" DestinationMap="1" />
 	</If>
+	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 1, 786) == false">
+        <MoveTo X="-1056.3874511719" Y="-4597.4345703125" Z="25.822027206421" Range="15" />
+        <InteractWithClosestGameObject GameObjectId="3189" />
+    </While>
 
+	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 2, 786) == false">
+        <MoveTo X="-919.53802490234" Y="-4483.2290039063" Z="29.581390380859" Range="15" />
+        <InteractWithClosestGameObject GameObjectId="3190" />
+    </While>
 
-	<If Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.AllQuestObjectivesAreComplete('Thwarting Kolkar Aggression', 786) == false">
-		<!-- Objective Settings -->
-        <ClearHotspots />
-        <ClearAllowedQuestNodes/>
-		<SetTargetingMode Mode="Gather Only" />
-		<SetEnableAutoHerb Value="true" />
-		<!-- QuestObjectsID -->
-		<Lua>QuestNodes[3189]=0</Lua>
-		<!-- QuestObjects -->
-		<AllowQuestNode NodeName="Attack Plan: Valley of Trials" />
-		<!-- Blackspots -->
-		<!-- Hotspots -->
-		<AddHotspot X="-1056.3874511719" Y="-4597.4345703125" Z="25.822027206421" Range="100" />        
-		<While Condition="Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 1, 786) == false" >
-			<Wait Value="100" />
-		</While>
-	</If>
-	<If Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.AllQuestObjectivesAreComplete('Thwarting Kolkar Aggression', 786) == false">
-		<!-- Objective Settings -->
-        <ClearHotspots />
-        <ClearAllowedQuestNodes/>
-		<SetTargetingMode Mode="Gather Only" />
-		<SetEnableAutoHerb Value="true" />
-		<!-- QuestObjectsID -->
-		<Lua>QuestNodes[3190]=0</Lua>
-		<!-- QuestObjects -->
+	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 3, 786) == false">
+        <MoveTo X="-976.193359375" Y="-4407.6572265625" Z="29.264957427979" Range="15" />
+        <InteractWithClosestGameObject GameObjectId="3192" />
+    </While>
 
-		<!-- Blackspots -->
-		<!-- Hotspots -->
-        <AddHotspot X="-919.53802490234" Y="-4483.2290039063" Z="29.581390380859" Range="100" />
-		<While Condition="Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 2, 786) == false" >
-			<Wait Value="100" />
-		</While>
-	</If>
-	<If Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.AllQuestObjectivesAreComplete('Thwarting Kolkar Aggression', 786) == false">
-		<!-- Objective Settings -->
-         <ClearHotspots />
-        <ClearAllowedQuestNodes/>
-		<SetTargetingMode Mode="Gather Only" />
-		<SetEnableAutoHerb Value="true" />
-		<!-- QuestObjectsID -->
-		<Lua>QuestNodes[3192]=0</Lua>
-		<!-- QuestObjects -->
-		<AllowQuestNode NodeName="Attack Plan: Orgrimmar" />
-		<!-- Blackspots -->
-		<!-- Hotspots -->
-        <AddHotspot X="-976.193359375" Y="-4407.6572265625" Z="29.264957427979" Range="100" />
-		<While Condition="Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 3, 786) == false" >
-			<Wait Value="100" />
-		</While>
-	</If>
 	<If Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.AllQuestObjectivesAreComplete('Thwarting Kolkar Aggression', 786) == true">
 		<ReturnQuest NpcName="Lar Prowltusk" QuestId="786" QuestName="Thwarting Kolkar Aggression" DestinationMap="1" />
 	</If>

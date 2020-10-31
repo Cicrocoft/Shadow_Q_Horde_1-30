@@ -241,7 +241,7 @@
  	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 830) == true and Data.AllQuestObjectivesAreComplete('The Admiral\'s Orders', 830) == true">
 		<ReturnQuest NpcName="Gar\'Thok" QuestId="830" QuestName="The Admiral\'s Orders" />
 	</If>	
-	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 831) == falseand Data.HasCompletedQuest('The Admiral\'s Orders', 830) == true">
+	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 830) == true">
 		<TakeQuest NpcName="Gar\'Thok" QuestId="831" QuestName="The Admiral\'s Orders" DestinationMap="1" />
 	</If>   
  	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">

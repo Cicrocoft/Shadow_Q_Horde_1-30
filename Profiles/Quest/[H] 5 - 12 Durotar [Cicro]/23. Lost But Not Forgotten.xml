@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasCompletedQuest('Lost But Not Forgotten') == false">
+<ShadowProfile Condition="Data.HasCompletedQuest('Lost But Not Forgotten') == false or UnitLevel('player') &lt; 11">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -132,7 +132,7 @@
 
     </If>
 
-    <If Condition="Data.HasActiveQuest('Lost But Not Forgotten') == false">
+    <If Condition="Data.HasActiveQuest('Lost But Not Forgotten') == false and Data.HasCompletedQuest('Lost But Not Forgotten') == false">
 
         <TakeQuest NpcName="Misha Tor\'kren" QuestName="Lost But Not Forgotten" />
 
@@ -169,7 +169,14 @@
         <Wait Value="100" />
 
     </While>
-
+    <SetTargetingMode Mode="Around Points" />	
+	<ClearAllowedQuestNodes/>
+      <ClearMonsterFilter/>
+      <SetMonsterFilterMode Mode="None" />
+        <While Condition="UnitLevel('player') &lt; 11" >
+            <Wait Value="100" />
+        </While> 
+     <If Condition="Data.HasActiveQuest('Lost But Not Forgotten') == true">
     <ReturnQuest NpcName="Misha Tor\'kren" QuestName="Lost But Not Forgotten" />
-
+	</If>
 </ShadowProfile>

@@ -116,6 +116,20 @@
 	</If>
 	<!-- End Restock -->
 
+        <SetRepairNpc NpcName="Wuark"/>
+        <SetVendorNpc NpcName="Wuark"/>	
+        <ClearHotspots />
+		<AddBlackspot X="-61.560054779053" Y="-4971.7075195313" Z="21.407651901245" Range="25" />
+		<AddHotspot X="-99.10604095459" Y="-4813.3125" Z="24.604766845703" Range="100" />
+		<AddHotspot X="-17.575113296509" Y="-4927.591796875" Z="16.446315765381" Range="100" />
+		<AddHotspot X="139.45855712891" Y="-4977.4692382813" Z="11.301057815552" Range="100" />
+        <SetTargetingMode Mode="Around Points" />
+        <ClearMonsterFilter/>
+        <SetMonsterFilterMode Mode="None" />
+        <While Condition="UnitLevel('player') &lt; 10" >
+            <Wait Value="100" />
+        </While>  
+
     <If Condition="Data.HasActiveQuest('Encroachment') == false">
 
         <TakeQuest NpcName="Gar\'Thok" QuestName="Encroachment" />
@@ -193,7 +207,11 @@
         <Wait Value="100" />
 
     </While>
-
+      <ClearMonsterFilter/>
+      <SetMonsterFilterMode Mode="None" />
+        <While Condition="UnitLevel('player') &lt; 10 or UnitXP('player') &lt;= 2600 and UnitXPMax('player') == 7600" >
+            <Wait Value="100" />
+        </While> 
     <ReturnQuest NpcName="Gar\'Thok" QuestName="Encroachment" />
 
 </ShadowProfile>

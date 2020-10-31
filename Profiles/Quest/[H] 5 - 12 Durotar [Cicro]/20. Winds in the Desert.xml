@@ -157,7 +157,13 @@
         <Wait Value="500" />
 
     </While>
-
+    <SetTargetingMode Mode="Around Points" />	
+	<ClearAllowedQuestNodes/>
+      <ClearMonsterFilter/>
+      <SetMonsterFilterMode Mode="None" />
+        <While Condition="UnitLevel('player') &lt; 10 or UnitXP('player') &lt;= 4350 and UnitXPMax('player') == 7600" >
+            <Wait Value="100" />
+        </While> 
     <ReturnQuest NpcName="Rezlak" QuestName="Winds in the Desert" />
 
 </ShadowProfile>
