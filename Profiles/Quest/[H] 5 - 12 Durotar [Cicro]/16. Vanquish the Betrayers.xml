@@ -129,7 +129,9 @@
         <AddHotspot X="-246.745" Y="-4934.075" Z="24.418726" Range="250" />
         <AddHotspot X="-278.4701" Y="-5124.425" Z="21.532255" Range="250" />
         <AddBlackspot X="-795.87" Y="4905.73" Z="19.54" Range="1" />
-        <SetTargetingMode Mode="Around Points" />
+		<AddBlackspot X="-242.66133117676" Y="-5112.0869140625" Z="25.244064331055" Range="25" />
+     
+	    <SetTargetingMode Mode="Around Points" />
         <ClearMonsterFilter/>
         <SetMonsterFilterMode Mode="Whitelist" />
         <AddMonsterFilterName Value="Kul Tiras Sailor"/>
@@ -155,6 +157,7 @@
 		<!-- Blackspots -->
         <AddBlackspot X="-795.87" Y="4905.73" Z="19.54" Range="1" />
         <AddBlackspot X="-1010.714" Y="-5147.952" Z="2.188" Range="20" />        
+		<AddBlackspot X="-242.66133117676" Y="-5112.0869140625" Z="25.244064331055" Range="25" />
 		<!-- Hotspots -->
         <AddHotspot X="-655.64514" Y="-5547.4253" Z="4.263571" Range="100" />
         <AddHotspot X="-708.16736" Y="-5510.57" Z="7.7532487" Range="100" />
@@ -200,6 +203,7 @@
 
     <If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.QuestObjectiveIsComplete('Vanquish the Betrayers', 3) == false" >
         <ClearHotspots/>
+		<ClearBlackspots />
         <SetMaxZDifference Value="5"/>    
         <AddHotspot X="-246.21" Y="-5111" Z="41.347" Range="250" />
         <ClearMonsterFilter/>
@@ -235,8 +239,8 @@
  	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 830) == true and Data.AllQuestObjectivesAreComplete('The Admiral\'s Orders', 830) == true">
 		<ReturnQuest NpcName="Gar\'Thok" QuestId="830" QuestName="The Admiral\'s Orders" />
 	</If>	
-	<If Condition="Data.HasActiveQuest('The Admiral's Orders', 831) == false and Data.HasCompletedQuest('The Admiral's Orders', 831) == false">
-		<TakeQuest NpcName="Gar\'Thok" QuestId="831" QuestName="The Admiral's Orders" DestinationMap="1" />
+	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 831) == false">
+		<TakeQuest NpcName="Gar\'Thok" QuestId="831" QuestName="The Admiral\'s Orders" DestinationMap="1" />
 	</If>   
  	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">
        <ReturnQuest NpcName="Gar\'Thok" QuestName="Vanquish the Betrayers" />

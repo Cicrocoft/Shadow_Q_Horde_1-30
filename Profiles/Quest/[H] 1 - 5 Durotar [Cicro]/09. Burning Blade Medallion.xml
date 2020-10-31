@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasCompletedQuest('Thazz'ril's Pick', 6394) == false and Data.PlayerClass() ~= WoWClass.Warlock">
+<ShadowProfile Condition="Data.HasCompletedQuest('Thazz\'ril\'s Pick', 6394) == false and Data.PlayerClass() ~= WoWClass.Warlock">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -118,7 +118,7 @@
 	
 	
 
-    <If Condition="Data.HasActiveQuest('Burning Blade Medallion') == false">
+    <If Condition="Data.HasActiveQuest('Burning Blade Medallion') == false and Data.HasCompletedQuest('Burning Blade Medallion') == false">
         <TakeQuest NpcName="Zureetha Fargaze" QuestName="Burning Blade Medallion" />
     </If>
 	<If Condition="Data.HasActiveQuest('Thazz\'ril\'s Pick', 6394) == false and Data.HasCompletedQuest('Thazz\'ril\'s Pick', 6394) == false">
@@ -154,11 +154,11 @@
     <AddBlackspot X="-248.31" Y="-4358.31" Z="62.42" Range="1" />
 
     <ReturnQuest NpcName="Zureetha Fargaze" QuestName="Burning Blade Medallion" />
-	<If Condition="Data.HasActiveQuest('Report to Sen'jin Village', 805) == false and Data.HasCompletedQuest('Report to Sen'jin Village', 805) == false">
-		<TakeQuest NpcName="Zureetha Fargaze" QuestId="805" QuestName="Report to Sen'jin Village" />
+	<If Condition="Data.HasActiveQuest('Report to Sen\'jin Village', 805) == false and Data.HasCompletedQuest('Report to Sen\'jin Village', 805) == false">
+		<TakeQuest NpcName="Zureetha Fargaze" QuestId="805" QuestName="Report to Sen\'jin Village" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Thazz'ril's Pick', 6394) == true and Data.AllQuestObjectivesAreComplete('Thazz'ril's Pick', 6394) == true">
-		<ReturnQuest NpcName="Foreman Thazz'ril" QuestId="6394" QuestName="Thazz'ril's Pick" />
+	<If Condition="Data.HasActiveQuest('Thazz\'ril\'s Pick', 6394) == true and Data.AllQuestObjectivesAreComplete('Thazz\'ril\'s Pick', 6394) == true">
+		<ReturnQuest NpcName="Foreman Thazz\'ril" QuestId="6394" QuestName="Thazz\'ril\'s Pick" />
 	</If>
 
 </ShadowProfile>

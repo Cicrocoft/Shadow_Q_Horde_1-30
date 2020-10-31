@@ -142,6 +142,11 @@
     <While Condition="Data.AllQuestObjectivesAreComplete('Carry Your Weight') == false" >
         <Wait Value="100" />
     </While>
+    <SetMonsterFilterMode Mode="None" />	
+    <ClearMonsterFilter/>	
+    <While Condition="UnitLevel('player') &lt; 8 or UnitXP('player') &lt;= 1200 and UnitXPMax('player') == 5400" >
+        <Wait Value="100" />
+    </While>	
     <ReturnQuest NpcName="Furl Scornbrow" QuestName="Carry Your Weight" />
 
 </ShadowProfile>
