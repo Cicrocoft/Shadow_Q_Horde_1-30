@@ -109,8 +109,8 @@
 		<AddDoNotSellItem ItemName="Tough Hunk of Bread" />
 	</If>
 	<If Condition="Data.PlayerClass() == WoWClass.Hunter">
-		<AddRestockItem ItemName="Tough Jerky" NpcName="Innkeeper Kauth" UnderAmount="5" BuyAmount="60"/>
-		<AddDoNotSellItem ItemName="Tough Jerky" />
+		<AddRestockItem ItemName="Tough Hunk of Bread" NpcName="Innkeeper Kauth" UnderAmount="5" BuyAmount="60"/>
+		<AddDoNotSellItem ItemName="Tough Hunk of Bread" />
 		<Lua>settings.ShouldFeedPet = true</Lua>
 		<Lua>settings.ShouldFeedPetFoodsStr = "Tough Jerky" </Lua>
 	</If>
