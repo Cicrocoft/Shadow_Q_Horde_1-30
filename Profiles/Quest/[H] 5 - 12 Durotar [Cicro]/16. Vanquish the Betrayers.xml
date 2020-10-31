@@ -225,6 +225,7 @@
             <SetEnableAutoLoot Value="true"/>
             <InteractWithClosestGameObject />
             <BotSleep Value="4500" />
+			<Wait Value="100" />
         </If>        
 	</While>
         <SetRestHPPercent Value="70"/>
