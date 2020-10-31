@@ -234,20 +234,18 @@
 		<BotSleep Value="1234" />
 		<Lua>AcceptQuest()</Lua>
 		<BotSleep Value="2500" />
+		<Wait Value="100" />
 	</While>
 	
  	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 830) == true and Data.AllQuestObjectivesAreComplete('The Admiral\'s Orders', 830) == true">
 		<ReturnQuest NpcName="Gar\'Thok" QuestId="830" QuestName="The Admiral\'s Orders" />
 	</If>	
-	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 831) == false">
+	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 831) == falseand Data.HasCompletedQuest('The Admiral\'s Orders', 830) == true">
 		<TakeQuest NpcName="Gar\'Thok" QuestId="831" QuestName="The Admiral\'s Orders" DestinationMap="1" />
 	</If>   
  	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">
        <ReturnQuest NpcName="Gar\'Thok" QuestName="Vanquish the Betrayers" />
 	</If>        
-	<If Condition="Data.HasActiveQuest('From The Wreckage....', 825) == false and Data.HasCompletedQuest('From The Wreckage....', 825) == false">
-		<TakeQuest NpcName="Gar\'Thok" QuestId="825" QuestName="From The Wreckage...." DestinationMap="1" />
-	</If>
 	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == true and Data.AllQuestObjectivesAreComplete('The Admiral\'s Orders', 831) == true">
 		<ReturnQuest NpcName="Nazgrel" QuestId="831" QuestName="The Admiral\'s Orders" DestinationMap="1" />
 	</If>
