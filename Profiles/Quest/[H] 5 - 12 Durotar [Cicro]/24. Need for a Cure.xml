@@ -119,10 +119,10 @@
 	<If Condition="Data.HasActiveQuest('Need for a Cure', 812) == false and Data.HasCompletedQuest('Need for a Cure', 812) == false">
 		<TakeQuest NpcName="Rhinag" QuestId="812" QuestName="Need for a Cure" DestinationMap="1" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Finding the Antidote', 813) == false and Data.HasCompletedQuest('Finding the Antidote', 813) == false">
+	<If Condition="Data.HasActiveQuest('Finding the Antidote', 813) == false and Data.HasCompletedQuest('Finding the Antidote', 813) == false and Data.GetItemCountByName('Venomtail Antidote') == 0 and Data.HasCompletedQuest('Need for a Cure', 812) == false">
 		<TakeQuest NpcName="Kor\'ghan" QuestId="813" QuestName="Finding the Antidote" DestinationMap="1" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Finding the Antidote', 813) == true and Data.AllQuestObjectivesAreComplete('Finding the Antidote', 813) == false">
+	<If Condition="Data.HasActiveQuest('Finding the Antidote', 813) == true and Data.AllQuestObjectivesAreComplete('Finding the Antidote', 813) == false and Data.GetItemCountByName('Venomtail Antidote') == 0 and Data.HasCompletedQuest('Need for a Cure', 812) == false">
 		<!-- Objective Settings -->
 		<ClearHotspots />
 		<SetTargetingMode Mode="Around Points" />
