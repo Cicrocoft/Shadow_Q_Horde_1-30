@@ -156,8 +156,8 @@
     <SetMonsterFilterMode Mode="Whitelist" />
 
     <AddMonsterFilterName Value="Dustwind Savage"/>
-
-    <SetMaxZDifference Value="10"/>
+    <AddMonsterFilterName Value="Dustwind Storm Witch"/>
+    <SetMaxZDifference Value="7"/>
 
     <SetRestHPPercent Value="90"/>
 
@@ -169,16 +169,9 @@
 
     </While>
 
-    <ClearMonsterFilter/>
-
-    <AddMonsterFilterName Value="Dustwind Storm Witch"/>
-
-    <While Condition="Data.QuestObjectiveIsComplete('Securing the Lines', 2) == false" >
-
-        <Wait Value="100" />
-
-    </While>
-
+        <While Condition="UnitLevel('player') &lt; 11 or UnitXP('player') &lt;= 8000 and UnitXPMax('player') == 8800" >
+            <Wait Value="100" />
+        </While> 
     <ReturnQuest NpcName="Rezlak" QuestName="Securing the Lines" />
 
 </ShadowProfile>
