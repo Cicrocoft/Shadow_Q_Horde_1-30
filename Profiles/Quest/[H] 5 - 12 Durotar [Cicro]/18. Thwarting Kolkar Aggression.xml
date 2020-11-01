@@ -130,7 +130,7 @@
     </While>
 
 	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 3, 786) == false">
-        <MoveTo X="-976.193359375" Y="-4407.6572265625" Z="29.264957427979" Range="15" />
+        <MoveTo X="-975.5107421875" Y="-4407.8408203125" Z="29.265363693237" Range="15" />
         <InteractWithClosestGameObject GameObjectId="3192" />
     </While>
 
