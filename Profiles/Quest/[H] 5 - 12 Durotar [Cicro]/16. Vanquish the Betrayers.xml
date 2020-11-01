@@ -169,7 +169,7 @@
 		</While>
 	</If>
 
-
+		<ClearAllowedQuestNodes/>
         <SetTargetingMode Mode="Around Points" />
         <ClearMonsterFilter/>
         <SetMonsterFilterMode Mode="Whitelist" />    
@@ -204,7 +204,7 @@
     <If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.QuestObjectiveIsComplete('Vanquish the Betrayers', 3) == false" >
         <ClearHotspots/>
 		<ClearBlackspots />
-        <SetMaxZDifference Value="5"/>    
+        <SetMaxZDifference Value="7"/>    
         <AddHotspot X="-246.21" Y="-5111" Z="41.347" Range="250" />
         <ClearMonsterFilter/>
         <SetMonsterFilterMode Mode="Whitelist" />        
