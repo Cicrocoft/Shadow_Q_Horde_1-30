@@ -1,0 +1,37 @@
+<ShadowProfile Condition="Data.HasCompletedQuest('Call of Fire', 1522) == false">
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1522) == false and Data.HasCompletedQuest('Call of Fire', 1522) == false">
+		<TakeQuest NpcName="Searn Firewarder" QuestId="1522" QuestName="Call of Fire" DestinationMap="1" />
+	</If>
+
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1522) == true and Data.AllQuestObjectivesAreComplete('Call of Fire', 1522) == true">
+		<ReturnQuest NpcName="Kranal Fiss" QuestId="1522" QuestName="Call of Fire" DestinationMap="1" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1524) == false and Data.HasCompletedQuest('Call of Fire', 1524) == false">
+		<TakeQuest NpcName="Kranal Fiss" QuestId="1524" QuestName="Call of Fire" DestinationMap="1" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1524) == true and Data.AllQuestObjectivesAreComplete('Call of Fire', 1524) == true">
+		<ReturnQuest NpcName="Telf Joolam" QuestId="1524" QuestName="Call of Fire" DestinationMap="1" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == false and Data.HasCompletedQuest('Call of Fire', 1525) == false">
+		<TakeQuest NpcName="Telf Joolam" QuestId="1525" QuestName="Call of Fire" DestinationMap="1" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == true and Data.AllQuestObjectivesAreComplete('Call of Fire', 1525) == false">
+		<!-- Objective Settings -->
+		<ClearHotspots />
+		<SetTargetingMode Mode="Around Points" />
+		<!-- Monsterfilter -->
+		<ClearMonsterFilter/>
+		<!-- Blackspots -->
+		<!-- Hotspots -->
+		<While Condition="Data.AllQuestObjectivesAreComplete('Call of Fire', 1525) == false" >
+			<Wait Value="100" />
+		</While>
+	</If>
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == true and Data.AllQuestObjectivesAreComplete('Call of Fire', 1525) == true">
+		<ReturnQuest NpcName="Telf Joolam" QuestId="1525" QuestName="Call of Fire" DestinationMap="1" />
+	</If>
+		<SetMonsterFilterMode Mode="Whitelist" />
+		<AddMonsterFilterName Value="Razormane Geomancer" />
+		<AddHotspot X="1.2500433921814" Y="-3283.5981445313" Z="91.66675567627" Range="100" />
+		<AddHotspot X="-111.44724273682" Y="-2952.9243164063" Z="91.667938232422" Range="100" />
+		<AddHotspot X="-112.5611114502" Y="-2952.8071289063" Z="91.667938232422" Range="100" />
