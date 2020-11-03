@@ -230,6 +230,9 @@
 	</While>
         <SetRestHPPercent Value="70"/>
         <SetUseFoodPercent Value="70"/>    
+ 	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">
+       <ReturnQuest NpcName="Gar\'Thok" QuestName="Vanquish the Betrayers" />
+	</If>	
 	<While Condition="Data.GetItemCountByName('Aged Envelope') == 1 and Data.HasActiveQuest('The Admiral\'s Orders', 830) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 830) == false">
 		<UseItem ItemId="4881" />
 		<BotSleep Value="1234" />
@@ -244,9 +247,7 @@
 	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 831) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 830) == true">
 		<TakeQuest NpcName="Gar\'Thok" QuestId="831" QuestName="The Admiral\'s Orders" DestinationMap="1" />
 	</If>   
- 	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">
-       <ReturnQuest NpcName="Gar\'Thok" QuestName="Vanquish the Betrayers" />
-	</If>        
+        
 	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 831) == true and Data.AllQuestObjectivesAreComplete('The Admiral\'s Orders', 831) == true">
 		<ReturnQuest NpcName="Nazgrel" QuestId="831" QuestName="The Admiral\'s Orders" DestinationMap="1" />
 	</If>
