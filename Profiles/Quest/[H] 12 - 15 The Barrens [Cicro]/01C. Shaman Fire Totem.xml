@@ -15,7 +15,25 @@
 	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == false and Data.HasCompletedQuest('Call of Fire', 1525) == false">
 		<TakeQuest NpcName="Telf Joolam" QuestId="1525" QuestName="Call of Fire" DestinationMap="1" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == true and Data.AllQuestObjectivesAreComplete('Call of Fire', 1525) == false">
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == true and Data.QuestObjectiveIsComplete('Call of Fire', 1, 1525) == false and Data.PlayerClass() == WoWClass.Shaman">
+		<!-- Objective Settings -->
+		<ClearHotspots />
+		<SetTargetingMode Mode="Around Points" />
+		<!-- Monsterfilter -->
+		<ClearMonsterFilter/>
+		<!-- Blackspots -->
+		<AddBlackspot X="-193.35580444336" Y="-3027.4104003906" Z="91.667060852051" Range="25" />
+		<AddBlackspot X="-220.83528137207" Y="-3003.3659667969" Z="91.667297363281" Range="25" />
+		<!-- Hotspots -->
+		<AddHotspot X="-77.96794128418" Y="-2787.3901367188" Z="95.259094238281" Range="100" />
+		<AddHotspot X="-175.08456420898" Y="-2910.3505859375" Z="93.494445800781" Range="100" />
+		<AddHotspot X="-109.21524047852" Y="-2982.7412109375" Z="91.666763305664" Range="100" />
+		<While Condition="Data.QuestObjectiveIsComplete('Call of Fire', 1, 1525) == false" >
+			<Wait Value="100" />
+		</While>
+	</If>  
+
+	<If Condition="Data.HasActiveQuest('Call of Fire', 1525) == true and Data.QuestObjectiveIsComplete('Call of Fire', 2, 1525) == false and Data.PlayerClass() == WoWClass.Shaman">
 		<!-- Objective Settings -->
 		<ClearHotspots />
 		<SetTargetingMode Mode="Around Points" />
@@ -23,7 +41,7 @@
 		<ClearMonsterFilter/>
 		<!-- Blackspots -->
 		<!-- Hotspots -->
-		<While Condition="Data.AllQuestObjectivesAreComplete('Call of Fire', 1525) == false" >
+		<While Condition="Data.QuestObjectiveIsComplete('Call of Fire', 2, 1525) == false" >
 			<Wait Value="100" />
 		</While>
 	</If>
