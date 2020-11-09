@@ -116,6 +116,41 @@
 	</If>
 	<!-- End Restock -->
 
+	<If Condition="Data.PlayerClass() == WoWClass.Rogue and BuffSpellIsValid('Dual Wield') == true and GetMoney() &gt; 3000 and Data.GetMyProfessionLevel('Swords') == nil" >
+        <If Condition="GetBindLocation() ~= 'Orgrimmar'">
+            <SetInnkeeper NpcName="Innkeeper Gryshka" DestinationMap="1" />	
+        </If>
+        <If Condition="Data.GetMyProfessionLevel('Swords') == nil" >
+         <NPCInteract NpcName="Michael Garrett" DestinationMap="0" />	
+        <NPCInteract NpcName="Archibald" DestinationMap="0" />	
+            <LearnWeaponSkill NpcId="11870" NpcName="Archibald" SkillName="One-Handed Swords" />
+        </If>
+
+	</If>
+	<If Condition="Data.PlayerClass() == WoWClass.Rogue and BuffSpellIsValid('Dual Wield') == true and GetMoney() &gt; 3000 and Data.GetMyProfessionLevel('Swords') == nil" >
+        <If Condition="GetBindLocation() ~= 'Orgrimmar'">
+            <SetInnkeeper NpcName="Innkeeper Gryshka" DestinationMap="1" />	
+        </If>
+        <If Condition="Data.GetMyProfessionLevel('Swords') == nil" >
+        <NPCInteract NpcName="Archibald" DestinationMap="0" />	
+            <LearnWeaponSkill NpcId="11870" NpcName="Archibald" SkillName="One-Handed Swords" />
+        </If>
+        <If Condition="GetBindLocation() == 'Orgrimmar' and select(3, GetItemCooldown(6948)) == 1 and Data.GetMyProfessionLevel('Swords') ~= nil and GetZoneText() == 'Undercity'" >
+            <UseItem ItemId="6948" />
+            <BotSleep Value="10000" />
+        </If>
+	</If>
+	<If Condition="Data.PlayerClass() == WoWClass.Rogue and BuffSpellIsValid('Dual Wield') == true and GetMoney() &gt; 2100 and Data.GetMyProfessionLevel('Swords') &lt;= 5" >
+        <If Condition="GetMoney() &gt; 2100">
+         <NPCInteract NpcName="Shoma" DestinationMap="1" />	
+             <BuyItem ItemId="851" ItemName="Cutlass" NpcId="3361" NpcName="Shoma" Amount="1" />		
+        </If>
+        <If Condition="GetMoney() &gt; 2100" > 
+         <NPCInteract NpcName="Shoma" DestinationMap="1" />	
+             <BuyItem ItemId="851" ItemName="Cutlass" NpcId="3361" NpcName="Shoma" Amount="1" />		
+        </If>
+	</If>
+
     <If Condition="Data.HasActiveQuest('Winds in the Desert') == false">
 
         <TakeQuest NpcName="Rezlak" QuestName="Winds in the Desert" />

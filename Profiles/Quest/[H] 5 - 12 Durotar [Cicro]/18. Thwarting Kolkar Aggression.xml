@@ -120,18 +120,33 @@
 		<TakeQuest NpcName="Lar Prowltusk" QuestId="786" QuestName="Thwarting Kolkar Aggression" DestinationMap="1" />
 	</If>
 	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 1, 786) == false">
-        <MoveTo X="-1056.3874511719" Y="-4597.4345703125" Z="25.822027206421" Range="15" />
-        <InteractWithClosestGameObject GameObjectId="3189" />
+	<If Condition="Nav.RangeFromMeXYZ(-1058.4471435547, -4597.6611328125, 25.822647094727) &gt; 25">
+		<MoveTo X="-1058.4471435547" Y="-4597.6611328125" Z="25.822647094727" Range="50" DestinationMap="1" />
+	</If>
+	<If Condition="Nav.RangeFromMeXYZ(-1058.4471435547, -4597.6611328125, 25.822647094727) &lt; 25">
+		<InteractWithClosestGameObject GameObjectId="3189" />
+		<BotSleep Value="5500" />
+	</If>
     </While>
 
 	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 2, 786) == false">
-        <MoveTo X="-919.53802490234" Y="-4483.2290039063" Z="29.581390380859" Range="15" />
-        <InteractWithClosestGameObject GameObjectId="3190" />
+	<If Condition="Nav.RangeFromMeXYZ(-919.58776855469, -4484.0737304688, 29.58185005188) &gt; 25">
+		<MoveTo X="-919.58776855469" Y="-4484.0737304688" Z="29.58185005188" Range="50" DestinationMap="1" />
+	</If>
+	<If Condition="Nav.RangeFromMeXYZ(-919.58776855469, -4484.0737304688, 29.58185005188) &lt; 25">
+		<InteractWithClosestGameObject GameObjectId="3190" />
+		<BotSleep Value="5500" />
+	</If>
     </While>
 
 	<While Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.QuestObjectiveIsComplete('Thwarting Kolkar Aggression', 3, 786) == false">
-        <MoveTo X="-975.5107421875" Y="-4407.8408203125" Z="29.265363693237" Range="15" />
-        <InteractWithClosestGameObject GameObjectId="3192" />
+	<If Condition="Nav.RangeFromMeXYZ(-976.39416503906, -4408.4252929688, 29.264513015747) &gt; 25">
+		<MoveTo X="-976.39416503906" Y="-4408.4252929688" Z="29.264513015747" Range="50" DestinationMap="1" />
+	</If>
+	<If Condition="Nav.RangeFromMeXYZ(-976.39416503906, -4408.4252929688, 29.264513015747) &lt; 25">
+		<InteractWithClosestGameObject GameObjectId="3192" />
+		<BotSleep Value="5500" />
+	</If>
     </While>
 
 	<If Condition="Data.HasActiveQuest('Thwarting Kolkar Aggression', 786) == true and Data.AllQuestObjectivesAreComplete('Thwarting Kolkar Aggression', 786) == true">

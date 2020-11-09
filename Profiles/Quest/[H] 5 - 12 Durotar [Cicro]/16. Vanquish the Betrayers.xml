@@ -230,9 +230,7 @@
 	</While>
         <SetRestHPPercent Value="70"/>
         <SetUseFoodPercent Value="70"/>    
- 	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">
-       <ReturnQuest NpcName="Gar\'Thok" QuestName="Vanquish the Betrayers" />
-	</If>	
+	
 	<While Condition="Data.GetItemCountByName('Aged Envelope') == 1 and Data.HasActiveQuest('The Admiral\'s Orders', 830) == false and Data.HasCompletedQuest('The Admiral\'s Orders', 830) == false">
 		<UseItem ItemId="4881" />
 		<BotSleep Value="1234" />
@@ -240,7 +238,9 @@
 		<BotSleep Value="2500" />
 		<Wait Value="100" />
 	</While>
-	
+ 	<If Condition="Data.HasActiveQuest('Vanquish the Betrayers') == true and Data.AllQuestObjectivesAreComplete('Vanquish the Betrayers') == true">
+       <ReturnQuest NpcName="Gar\'Thok" QuestName="Vanquish the Betrayers" />
+	</If>	
  	<If Condition="Data.HasActiveQuest('The Admiral\'s Orders', 830) == true and Data.AllQuestObjectivesAreComplete('The Admiral\'s Orders', 830) == true">
 		<ReturnQuest NpcName="Gar\'Thok" QuestId="830" QuestName="The Admiral\'s Orders" />
 	</If>	

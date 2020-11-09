@@ -121,8 +121,16 @@
         <TakeQuest NpcName="Master Vornal" QuestName="A Solvent Spirit" />
 
     </If>
-
-
+	<AddHotspot X="-505.54489135742" Y="-5258.0546875" Z="-1.403838634491" Range="150" />
+	<AddHotspot X="-310.76983642578" Y="-5253.7319335938" Z="-1.4000030755997" Range="150" />
+	<AddHotspot X="-232.07829284668" Y="-5275.9174804688" Z="-1.3804008960724" Range="150" />
+	<AddHotspot X="-146.64863586426" Y="-5253.125" Z="-1.38121342659" Range="150" />
+	<AddHotspot X="-67.948204040527" Y="-5184.654296875" Z="-0.37062218785286" Range="150" />
+	<AddHotspot X="37.963779449463" Y="-5148.7607421875" Z="0.052687752991915" Range="150" />
+	<AddHotspot X="131.01496887207" Y="-5144.3999023438" Z="0.55122143030167" Range="150" />
+	<AddHotspot X="208.66036987305" Y="-5143.6884765625" Z="0.80134922266006" Range="150" />
+	<AddHotspot X="302.01400756836" Y="-5155.8911132813" Z="0.42768681049347" Range="150" />
+		<AddBlackspot X="-530.12353515625" Y="-5211.7436523438" Z="10.903032302856" Range="25" />
     <AddHotspot X="-779.3" Y="-5112.242" Z="0.13" Range="240" />
 
     <AddHotspot X="-897.94" Y="-5029.448" Z="1.4835" Range="240" />
@@ -135,30 +143,29 @@
 
     <AddBlackspot X="-795.87" Y="4905.73" Z="19.54" Range="1" />
 
-    <SetEnableVendoring Value="true"/>
-
-    <SetVendorNpc NpcName="Trayexir"/>
-
-    <SetEnableRepairing Value="true"/>
-
-    <SetRepairNpc NpcName="Trayexir"/>
-
     <SetTargetingMode Mode="Around Points" />
-
     <ClearMonsterFilter/>
-
     <SetMonsterFilterMode Mode="Whitelist" />
-
     <AddMonsterFilterName Value="Makrura Clacker"/>
-
     <AddMonsterFilterName Value="Makrura Shellhide"/>
-
-    <While Condition="Data.QuestObjectiveIsComplete('A Solvent Spirit', 1) == false" >
+	<AddMonsterFilterName Value="Pygmy Surf Crawler" />
+	<AddMonsterFilterName Value="Surf Crawler" />	
+    <While Condition="Data.QuestObjectiveIsComplete('A Solvent Spirit', 2) == false" >
 
         <Wait Value="100" />
 
     </While>
 
+		<AddBlackspot X="-530.12353515625" Y="-5211.7436523438" Z="10.903032302856" Range="25" />
+	<AddHotspot X="-505.54489135742" Y="-5258.0546875" Z="-1.403838634491" Range="150" />
+	<AddHotspot X="-310.76983642578" Y="-5253.7319335938" Z="-1.4000030755997" Range="150" />
+	<AddHotspot X="-232.07829284668" Y="-5275.9174804688" Z="-1.3804008960724" Range="150" />
+	<AddHotspot X="-146.64863586426" Y="-5253.125" Z="-1.38121342659" Range="150" />
+	<AddHotspot X="-67.948204040527" Y="-5184.654296875" Z="-0.37062218785286" Range="150" />
+	<AddHotspot X="37.963779449463" Y="-5148.7607421875" Z="0.052687752991915" Range="150" />
+	<AddHotspot X="131.01496887207" Y="-5144.3999023438" Z="0.55122143030167" Range="150" />
+	<AddHotspot X="208.66036987305" Y="-5143.6884765625" Z="0.80134922266006" Range="150" />
+	<AddHotspot X="302.01400756836" Y="-5155.8911132813" Z="0.42768681049347" Range="150" />
 
     <AddHotspot X="-779.3" Y="-5112.242" Z="0.13" Range="240" />
 
@@ -177,10 +184,10 @@
     <ClearMonsterFilter/>
 
     <SetMonsterFilterMode Mode="Whitelist" />
+    <AddMonsterFilterName Value="Makrura Clacker"/>
+    <AddMonsterFilterName Value="Makrura Shellhide"/>
 
-    <AddMonsterFilterName Value="Pygmy Surf Crawler"/>
-
-    <While Condition="Data.QuestObjectiveIsComplete('A Solvent Spirit', 2) == false" >
+    <While Condition="Data.QuestObjectiveIsComplete('A Solvent Spirit', 1) == false" >
 
         <Wait Value="100" />
 
