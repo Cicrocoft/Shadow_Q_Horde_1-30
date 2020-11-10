@@ -57,10 +57,10 @@
 	</If>
 
 	<If Condition="Data.HasActiveQuest('Training the Beast', 6081) == false and Data.HasCompletedQuest('Training the Beast', 6081) == false">
-		<SetCRMode Mode="External"/>
+		<!--<SetCRMode Mode="External"/> -->
 		<TakeQuest NpcName="Thotar" QuestId="6081" QuestName="Training the Beast" DestinationMap="1" />
 	</If>
-	<If Condition="select(3, GetStablePetInfo(0)) == 0" >
+<!--	<If Condition="select(3, GetStablePetInfo(0)) == 0" >
 
 		<SetEnableIgnoreLootAroundMobs Value="false"/>
 		<SetEnablePreemptiveMonsterAttack Value="false"/>
@@ -101,7 +101,7 @@
 		<SetEnableVendoring Value="true"/>
 		<SetEnableRepairing Value="true"/>
 		<SetEnableRest Value="true"/>
-	</If>	
+	</If>	-->
 	<If Condition="Data.HasActiveQuest('Training the Beast', 6081) == true">
 		<ReturnQuest NpcName="Ormak Grimshot" QuestId="6081" QuestName="Training the Beast" />
 	</If>

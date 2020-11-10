@@ -167,6 +167,14 @@
         <NPCInteract NpcName="Devrak" />
 		<ReturnQuest NpcName="Innkeeper Gryshka" QuestId="6384" QuestName="Ride to Orgrimmar" DestinationMap="1" />
 	</If>
+	<If Condition="Data.PlayerClass() == WoWClass.Rogue and select(4, GetItemInfo(GetInventoryItemLink('player', 16))) &lt; 9 and GetMoney() &gt; 2200" >
+		<NPCInteract NpcName="Shoma" DestinationMap="1" />	
+		<BuyItem ItemId="851" ItemName="Cutlass" NpcId="3361" NpcName="Shoma" Amount="1" />	
+	</If>
+	<If Condition="Data.PlayerClass() == WoWClass.Rogue and BuffSpellIsValid('Dual Wield') == true and select(4, GetItemInfo(GetInventoryItemLink('player', 17))) &lt; 9 and GetMoney() &gt; 2200" >
+		<NPCInteract NpcName="Shoma" DestinationMap="1" />	
+		<BuyItem ItemId="851" ItemName="Cutlass" NpcId="3361" NpcName="Shoma" Amount="1" />	
+	</If>
 	<If Condition="Data.HasActiveQuest('Doras the Wind Rider Master', 6385) == false and Data.HasCompletedQuest('Doras the Wind Rider Master', 6385) == false">
 		<TakeQuest NpcName="Innkeeper Gryshka" QuestId="6385" QuestName="Doras the Wind Rider Master" DestinationMap="1" />
 	</If>
