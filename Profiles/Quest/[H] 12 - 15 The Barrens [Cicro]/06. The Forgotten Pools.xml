@@ -145,7 +145,7 @@
 		<AddBlackspot X="70.159080505371" Y="-2097.4895019531" Z="91.667098999023" Range="25" />
 	<While Condition="Data.HasActiveQuest('The Forgotten Pools', 870) == true and Data.AllQuestObjectivesAreComplete('The Forgotten Pools', 870) == false">
 		<MoveTo X="56.500778198242" Y="-1947.3707275391" Z="89.82593536377" DestinationMap="1" />
-        <MoveTo NoNav="true" X="120.9104309082" Y="-1931.1496582031" Z="89.549118041992" Range="5" DestinationMap="1" />
+        <MoveTo NoNav="true" X="93.434432983398" Y="-1938.4965820313" Z="79.201347351074" Range="5" DestinationMap="1" />
         <Wait Value="100" />
 
 	</While>
