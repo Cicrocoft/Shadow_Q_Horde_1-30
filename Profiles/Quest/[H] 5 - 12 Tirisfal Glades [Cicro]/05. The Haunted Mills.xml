@@ -180,7 +180,9 @@
         <ClearHotspots />
      <SetTargetingMode Mode="Around Points" />
        <AddHotspot X="2751.5087890625" Y="793.90386962891" Z="114.36695098877" Range="150" />
-
+        <ClearMonsterFilter/>
+        <SetMonsterFilterMode Mode="Whitelist" />
+		<AddMonsterFilterName Value="Nissa Agamand" />
         <While Condition="Data.GetItemCountByName('Nissa\'s Remains') == 0" >
             <Wait Value="100" />
         </While>
