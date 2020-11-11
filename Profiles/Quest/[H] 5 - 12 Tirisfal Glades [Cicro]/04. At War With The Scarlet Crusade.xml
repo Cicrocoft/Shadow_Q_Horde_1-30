@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasActiveQuest(nil, 427) and not Data.AllQuestObjectivesAreComplete(nil, 427)">
+<ShadowProfile Condition="Data.AllQuestObjectivesAreComplete('Proof of Demise', 374) == false">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -165,4 +165,26 @@
 	<If Condition="Data.HasActiveQuest('A New Plague', 369) == false and Data.HasCompletedQuest('A New Plague', 369) == false">
 		<TakeQuest NpcName="Apothecary Johaan" QuestId="369" QuestName="A New Plague" DestinationMap="0" />
 	</If>	
+    <If Condition="not Data.HasActiveQuest('Proof of Demise') and not Data.HasCompletedQuest('Proof of Demise')">
+        <TakeQuest NpcName="Deathguard Burgess" QuestName="Proof of Demise" />
+    </If>
+ 	<If Condition="Data.HasActiveQuest('Proof of Demise') == true and Data.AllQuestObjectivesAreComplete('Proof of Demise') == false">
+        <ClearMonsterFilter/>
+     <SetTargetingMode Mode="Around Points" />
+        <SetEnableMonsterLevelFilter Value="true"/>
+        <SetMonsterAboveMyLevel Value="2"/>
+        <SetMonsterBelowMyLevel Value="2"/>
+		<SetMonsterFilterMode Mode="Whitelist" />
+		<AddMonsterFilterName Value="Scarlet Warrior" />
+        <ClearHotspots />
+		<AddHotspot X="2381.9770507813" Y="1575.6907958984" Z="31.694198608398" Range="200" />
+
+        <While Condition="not Data.QuestObjectiveIsComplete('Proof of Demise', 1)" >
+            <Wait Value="100" />
+        </While>
+
+    </If> 
+	<If Condition="Data.HasActiveQuest('Proof of Demise', 374) == true and Data.AllQuestObjectivesAreComplete('Proof of Demise', 374) == true">
+		<ReturnQuest NpcName="Deathguard Burgess" QuestId="374" QuestName="Proof of Demise" DestinationMap="0" />
+	</If>		
 </ShadowProfile>

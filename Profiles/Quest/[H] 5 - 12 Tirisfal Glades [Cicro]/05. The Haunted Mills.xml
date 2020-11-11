@@ -110,10 +110,6 @@
         <TakeQuestFromObject QuestName="Wanted: Maggot Eye" X="2284.8542480469" Y="289.02151489258" Z="35.182540893555" />
     </If>
     
-    <If Condition="not Data.HasActiveQuest('Proof of Demise') and not Data.HasCompletedQuest('Proof of Demise')">
-        <TakeQuest NpcName="Deathguard Burgess" QuestName="Proof of Demise" />
-    </If>
-    
     <If Condition="not Data.HasActiveQuest('The Mills Overrun') and not Data.HasCompletedQuest('The Mills Overrun')">
         <TakeQuest NpcName="Deathguard Dillinger" QuestName="The Mills Overrun" />
     </If>
@@ -122,6 +118,24 @@
         <TakeQuest NpcName="Junior Apothecary Holland" QuestName="Doom Weed" />
     </If>
 
+	<If Condition="Data.HasActiveQuest('Doom Weed') == true and Data.AllQuestObjectivesAreComplete('Doom Weed') == false">
+			<ClearMonsterFilter/>
+		<SetTargetingMode Mode="Gather Only" />
+		<SetEnableAutoHerb Value="true" />
+		<AllowQuestNode NodeName="Doom Weed" />
+		<ClearHotspots />
+		<AddHotspot X="2813.1655273438" Y="435.71603393555" Z="18.751384735107" Range="150" />
+		<AddHotspot X="2744.5197753906" Y="448.00665283203" Z="21.216367721558" Range="150" />
+		<AddHotspot X="2664.1520996094" Y="466.78887939453" Z="15.639089584351" Range="150" />
+		<AddHotspot X="2564.3488769531" Y="467.66073608398" Z="27.210716247559" Range="150" />
+
+		<While Condition="not Data.QuestObjectiveIsComplete('Doom Weed', 1)" >
+			<Wait Value="100" />
+		</While>
+	</If>
+	<If Condition="Data.HasActiveQuest('Doom Weed', 5482) == true and Data.AllQuestObjectivesAreComplete('Doom Weed', 5482) == true">
+		<ReturnQuest NpcName="Junior Apothecary Holland" QuestId="5482" QuestName="Doom Weed" DestinationMap="0" />
+	</If>
 	<If Condition="Data.HasActiveQuest('The Haunted Mills') == true and Data.AllQuestObjectivesAreComplete('The Haunted Mills') == false">
         <SetMonsterFilterMode Mode="Whitelist" />
         <AddMonsterFilterName Value="Devlin Agamand"/>
@@ -196,29 +210,12 @@
             <Wait Value="100" />
         </While>
     </If>
- 	<If Condition="Data.HasActiveQuest('Proof of Demise') == true and Data.AllQuestObjectivesAreComplete('Proof of Demise') == false">
-        <ClearMonsterFilter/>
-     <SetTargetingMode Mode="Around Points" />
-        <SetEnableMonsterLevelFilter Value="true"/>
-        <SetMonsterAboveMyLevel Value="2"/>
-        <SetMonsterBelowMyLevel Value="2"/>
-		<SetMonsterFilterMode Mode="Whitelist" />
-		<AddMonsterFilterName Value="Scarlet Warrior" />
-        <ClearHotspots />
-		<AddHotspot X="2381.9770507813" Y="1575.6907958984" Z="31.694198608398" Range="200" />
 
-        <While Condition="not Data.QuestObjectiveIsComplete('Proof of Demise', 1)" >
-            <Wait Value="100" />
-        </While>
-
-    </If> 
 
 	<If Condition="Data.HasActiveQuest('The Mills Overrun', 426) == true and Data.AllQuestObjectivesAreComplete('The Mills Overrun', 426) == true">
 		<ReturnQuest NpcName="Deathguard Dillinger" QuestId="426" QuestName="The Mills Overrun" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Proof of Demise', 374) == true and Data.AllQuestObjectivesAreComplete('Proof of Demise', 374) == true">
-		<ReturnQuest NpcName="Deathguard Burgess" QuestId="374" QuestName="Proof of Demise" DestinationMap="0" />
-	</If>
+
 	<If Condition="Data.HasActiveQuest('The Haunted Mills', 362) == true and Data.AllQuestObjectivesAreComplete('The Haunted Mills', 362) == true">
 		<ReturnQuest NpcName="Coleman Farthing" QuestId="362" QuestName="The Haunted Mills" DestinationMap="0" />
 	</If>
