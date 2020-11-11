@@ -124,15 +124,16 @@
 	<If Condition="Data.HasActiveQuest('Thazz\'ril\'s Pick', 6394) == false and Data.HasCompletedQuest('Thazz\'ril\'s Pick', 6394) == false">
 		<TakeQuest NpcName="Foreman Thazz'ril" QuestId="6394" QuestName="Thazz\'ril\'s Pick" />
 	</If>
-	<While Condition="Data.HasActiveQuest('Thazz\'ril\'s Pick') == true and Data.AllQuestObjectivesAreComplete('Thazz\'ril\'s Pick') == false" >	
 		<ClearHotspots />
-		<If Condition="Nav.RangeFromMeXYZ(-87.46, -4274.787, 65.852) &gt; 5">
-			<MoveTo X="-87.46" Y="-4274.787" Z="65.852" />
+	<While Condition="Data.HasActiveQuest('Thazz\'ril\'s Pick') == true and Data.AllQuestObjectivesAreComplete('Thazz\'ril\'s Pick') == false" >	
+		<If Condition="Nav.RangeFromMeXYZ(-86.998840332031, -4276.0732421875, 65.438339233398) &gt; 20">
+			<MoveTo X="-86.998840332031" Y="-4276.0732421875" Z="65.438339233398" Range="5" DestinationMap="1" />
 		</If>
-		<Lua>SetCVar("autoLootDefault", "1"); print("Autoloot On");</Lua>
-		<SetEnableAutoLoot Value="true"/>
-		<InteractWithClosestGameObject />
-		<BotSleep Value="8000"/>
+		<If Condition="Nav.RangeFromMeXYZ(-86.998840332031, -4276.0732421875, 65.438339233398) &lt; 20">
+			<Lua>SetCVar("autoLootDefault", "1"); print("Autoloot On");</Lua>
+			<InteractWithClosestGameObject GameObjectId="178087" />
+			<BotSleep Value="5500" />
+		</If>
 	</While>	
     <SetEnableAutoLoot Value="false" /> 
 	<ClearHotspots />
