@@ -173,9 +173,7 @@
         <SetTargetingMode Mode="Around Points" />
         <ClearMonsterFilter/>
         <SetMonsterFilterMode Mode="Whitelist" />    
-        <AddMonsterFilterName Value="Surf Crawler" />
         <AddMonsterFilterName Value="Bloodtalon Taillasher" />
-        <AddMonsterFilterName Value="Makrura Shellhide" />  
         <AddHotspot X="-655.64514" Y="-5547.4253" Z="4.263571" Range="150" />
         <AddHotspot X="-708.16736" Y="-5510.57" Z="7.7532487" Range="150" />
         <AddHotspot X="-814.27014" Y="-5314.775" Z="3.5509095" Range="150" />
@@ -196,7 +194,10 @@
         <AddBlackspot X="-795.87" Y="4905.73" Z="19.54" Range="1" />
         <SetTargetingMode Mode="Around Points" />
         <ClearMonsterFilter/>
-        <SetMonsterFilterMode Mode="None" />
+		<SetMonsterFilterMode Mode="Blacklist" />
+		<AddMonsterFilterName Value="Pygmy Surf Crawler" />
+		<AddMonsterFilterName Value="Surf Crawler" />
+		<AddMonsterFilterName Value="Makrura Clacker" />
         <While Condition="UnitLevel('player') &lt; 9" >
             <Wait Value="100" />
         </While>  
