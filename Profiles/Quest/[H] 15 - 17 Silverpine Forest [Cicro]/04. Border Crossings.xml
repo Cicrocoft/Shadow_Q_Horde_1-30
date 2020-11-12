@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasCompletedQuest('Arugal\'s Folly', 423) == false">
+<ShadowProfile Condition="Data.HasCompletedQuest('Ambermill Investigations', 479) == false">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -101,7 +101,6 @@
 	<SetVendorNpc NpcName="Nadia Vernon" />
 	<SetRepairNpc NpcName="Nadia Vernon" />	
 	<!-- Local Do not sell Items -->
-		<AddDoNotSellItem ItemName="Discolored Worg Heart" />
 
 	<!-- Restock Sepulcher 14+ -->
 	<SetEnableRestockItems Value="true"/>
@@ -142,59 +141,59 @@
 	</If>
 	<!-- End Restock -->
 
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 422) == false and Data.HasCompletedQuest('Arugal\'s Folly', 422) == false">
-		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="422" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Border Crossings', 477) == false and Data.HasCompletedQuest('Border Crossings', 477) == false">
+		<TakeQuest NpcName="Shadow Priest Allister" QuestId="477" QuestName="Border Crossings" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Return to Quinn', 430) == false and Data.HasCompletedQuest('Return to Quinn', 430) == false and Data.HasCompletedQuest('Wild Hearts', 429) == true">
-		<TakeQuest NpcName="Apothecary Renferrel" QuestId="430" QuestName="Return to Quinn" DestinationMap="0" />
-	</If>	
-	<While Condition="Data.HasActiveQuest('Arugal\'s Folly', 422) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 422) == false">
-	<If Condition="Nav.RangeFromMeXYZ(868.03607177734, 1231.708984375, 52.601692199707) &gt; 10">
-		<MoveTo X="868.03607177734" Y="1231.708984375" Z="52.601692199707" Range="10" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Border Crossings', 477) == true and Data.AllQuestObjectivesAreComplete('Border Crossings', 477) == true">
+		<ReturnQuestToObject QuestId="477" QuestName="Border Crossings" X="-23.927183151245" Y="1355.0394287109" Z="59.676620483398" DestinationMap="0" />
 	</If>
-	<If Condition="Nav.RangeFromMeXYZ(868.03607177734, 1231.708984375, 52.601692199707) &lt; 10">
-		<Lua>SetCVar("autoLootDefault", "1"); print("Autoloot On");</Lua>	
-		<InteractWithClosestGameObject GameObjectId="1571" />
-		<BotSleep Value="5500" />
+	<If Condition="Data.HasActiveQuest('Maps and Runes', 478) == false and Data.HasCompletedQuest('Maps and Runes', 478) == false">
+		<TakeQuestFromObject QuestId="478" QuestName="Maps and Runes" X="-23.927183151245" Y="1355.0394287109" Z="59.676620483398" DestinationMap="0" />
 	</If>
-	</While>
-	<If Condition="Data.HasActiveQuest('Return to Quinn', 430) == true and Data.AllQuestObjectivesAreComplete('Return to Quinn', 430) == true">
-		<ReturnQuest NpcName="Quinn Yorick" QuestId="430" QuestName="Return to Quinn" DestinationMap="0" />
-	</If>	
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 422) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 422) == true">
-		<ReturnQuest NpcName="Dalar Dawnweaver" QuestId="422" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Maps and Runes', 478) == true and Data.AllQuestObjectivesAreComplete('Maps and Runes', 478) == true">
+		<ReturnQuest NpcName="Shadow Priest Allister" QuestId="478" QuestName="Maps and Runes" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 423) == false and Data.HasCompletedQuest('Arugal\'s Folly', 423) == false">
-		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="423" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Dalar\'s Analysis', 481) == false and Data.HasCompletedQuest('Dalar\'s Analysis', 481) == false">
+		<TakeQuest NpcName="Shadow Priest Allister" QuestId="481" QuestName="Dalar\'s Analysis" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 423) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 423) == false">
+	<If Condition="Data.HasActiveQuest('Dalar\'s Analysis', 481) == true and Data.AllQuestObjectivesAreComplete('Dalar\'s Analysis', 481) == true">
+		<ReturnQuest NpcName="Dalar Dawnweaver" QuestId="481" QuestName="Dalar\'s Analysis" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Dalaran\'s Intentions', 482) == false and Data.HasCompletedQuest('Dalaran\'s Intentions', 482) == false">
+		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="482" QuestName="Dalaran\'s Intentions" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Dalaran\'s Intentions', 482) == true and Data.AllQuestObjectivesAreComplete('Dalaran\'s Intentions', 482) == true">
+		<ReturnQuest NpcName="Shadow Priest Allister" QuestId="482" QuestName="Dalaran\'s Intentions" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Ambermill Investigations', 479) == false and Data.HasCompletedQuest('Ambermill Investigations', 479) == false">
+		<TakeQuest NpcName="Shadow Priest Allister" QuestId="479" QuestName="Ambermill Investigations" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Ambermill Investigations', 479) == true and Data.AllQuestObjectivesAreComplete('Ambermill Investigations', 479) == false">
 		<!-- Objective Settings -->
 		<ClearHotspots />
 		<SetTargetingMode Mode="Around Points" />
 		<!-- Monsterfilter -->
 		<ClearMonsterFilter/>
-		<SetMonsterFilterMode Mode="Blacklist" />
-		<AddMonsterFilterName Value="Son of Arugal" />
+		<SetMonsterFilterMode Mode="None" />
 		<!-- Blackspots -->
-		<AddBlackspot X="774.61907958984" Y="1627.5046386719" Z="30.765331268311" Range="32" />
-		<AddBlackspot X="729.55114746094" Y="1467.1097412109" Z="62.36311340332" Range="50" />
+		<AddBlackspot X="-76.090141296387" Y="943.82952880859" Z="68.74365234375" Range="25" />
+		<AddBlackspot X="-63.456451416016" Y="961.82788085938" Z="67.441535949707" Range="25" />		
+		<AddBlackspot X="-186.38856506348" Y="916.8212890625" Z="66.706985473633" Range="25" />
 		<!-- Hotspots -->
-		<AddHotspot X="852.462890625" Y="1536.7828369141" Z="35.263721466064" Range="100" />
-		<AddHotspot X="815.04626464844" Y="1677.3400878906" Z="26.33935546875" Range="100" />
-		<AddHotspot X="835.67669677734" Y="1755.6185302734" Z="17.118156433105" Range="100" />
-		<AddHotspot X="944.62884521484" Y="1813.9229736328" Z="10.386102676392" Range="100" />
-		<AddHotspot X="1031.5065917969" Y="1888.6196289063" Z="8.7232418060303" Range="100" />		
-		<While Condition="Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 423) == false" >
+		<AddHotspot X="32.984004974365" Y="1113.3493652344" Z="67.595626831055" Range="100" />
+		<AddHotspot X="-31.59376335144" Y="1099.1077880859" Z="65.004043579102" Range="100" />
+		<AddHotspot X="-89.716819763184" Y="1103.0285644531" Z="65.322174072266" Range="100" />
+		<AddHotspot X="-181.1470489502" Y="1081.5286865234" Z="56.546894073486" Range="100" />
+		<AddHotspot X="-174.14643859863" Y="1015.1970825195" Z="65.467445373535" Range="100" />
+		<AddHotspot X="-108.8126449585" Y="966.84545898438" Z="67.951805114746" Range="100" />
+		<AddHotspot X="-153.16973876953" Y="925.39721679688" Z="65.633575439453" Range="100" />
+		<AddHotspot X="-211.79481506348" Y="984.66851806641" Z="70.78719329834" Range="100" />		
+		<While Condition="Data.AllQuestObjectivesAreComplete('Ambermill Investigations', 479) == false" >
 			<Wait Value="100" />
 		</While>
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 423) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 423) == true">
-		<AddBlackspot X="729.55114746094" Y="1467.1097412109" Z="62.36311340332" Range="50" />
-		<ReturnQuest NpcName="Dalar Dawnweaver" QuestId="423" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Ambermill Investigations', 479) == true and Data.AllQuestObjectivesAreComplete('Ambermill Investigations', 479) == true">
+		<ReturnQuest NpcName="Shadow Priest Allister" QuestId="479" QuestName="Ambermill Investigations" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 424) == false and Data.HasCompletedQuest('Arugal\'s Folly', 424) == false">
-		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="424" QuestName="Arugal\'s Folly" DestinationMap="0" />
-	</If>
-
 
 </ShadowProfile>

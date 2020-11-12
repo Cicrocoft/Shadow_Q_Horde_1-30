@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasCompletedQuest('Arugal\'s Folly', 423) == false">
+<ShadowProfile Condition="Data.HasCompletedQuest('Arugal\'s Folly', 424) == false">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -195,6 +195,25 @@
 	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 424) == false and Data.HasCompletedQuest('Arugal\'s Folly', 424) == false">
 		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="424" QuestName="Arugal\'s Folly" DestinationMap="0" />
 	</If>
-
+	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 424) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 424) == false">
+		<!-- Objective Settings -->
+		<ClearHotspots />
+		<SetTargetingMode Mode="Around Points" />
+		<!-- Monsterfilter -->
+		<ClearMonsterFilter/>
+		<SetMonsterFilterMode Mode="Whitelist" />
+		<AddMonsterFilterName Value="Grimson the Pale" />	
+		<!-- Blackspots -->
+		<AddBlackspot X="402.83798217773" Y="1106.9680175781" Z="96.487609863281" Range="15" />
+		<!-- Hotspots -->
+		<AddHotspot X="409.3078918457" Y="1000.0657958984" Z="108.25430297852" Range="100" />
+	
+		<While Condition="Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 424) == false" >
+			<Wait Value="100" />
+		</While>
+	</If>
+	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 424) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 424) == true">
+		<ReturnQuest NpcName="Dalar Dawnweaver" QuestId="424" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	</If>
 
 </ShadowProfile>

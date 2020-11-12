@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.HasCompletedQuest('Arugal\'s Folly', 423) == false">
+<ShadowProfile Condition="Data.HasCompletedQuest('Report to Hadrec', 448) == false">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -101,7 +101,6 @@
 	<SetVendorNpc NpcName="Nadia Vernon" />
 	<SetRepairNpc NpcName="Nadia Vernon" />	
 	<!-- Local Do not sell Items -->
-		<AddDoNotSellItem ItemName="Discolored Worg Heart" />
 
 	<!-- Restock Sepulcher 14+ -->
 	<SetEnableRestockItems Value="true"/>
@@ -142,59 +141,84 @@
 	</If>
 	<!-- End Restock -->
 
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 422) == false and Data.HasCompletedQuest('Arugal\'s Folly', 422) == false">
-		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="422" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('The Decrepit Ferry', 438) == false and Data.HasCompletedQuest('The Decrepit Ferry', 438) == false">
+		<TakeQuest NpcName="High Executor Hadrec" QuestId="438" QuestName="The Decrepit Ferry" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Return to Quinn', 430) == false and Data.HasCompletedQuest('Return to Quinn', 430) == false and Data.HasCompletedQuest('Wild Hearts', 429) == true">
-		<TakeQuest NpcName="Apothecary Renferrel" QuestId="430" QuestName="Return to Quinn" DestinationMap="0" />
-	</If>	
-	<While Condition="Data.HasActiveQuest('Arugal\'s Folly', 422) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 422) == false">
-	<If Condition="Nav.RangeFromMeXYZ(868.03607177734, 1231.708984375, 52.601692199707) &gt; 10">
-		<MoveTo X="868.03607177734" Y="1231.708984375" Z="52.601692199707" Range="10" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('The Decrepit Ferry', 438) == true and Data.AllQuestObjectivesAreComplete('The Decrepit Ferry', 438) == true">
+		<ReturnQuestToObject QuestId="438" QuestName="The Decrepit Ferry" X="688.36700439453" Y="996.33862304688" Z="34.635623931885" DestinationMap="0" />
 	</If>
-	<If Condition="Nav.RangeFromMeXYZ(868.03607177734, 1231.708984375, 52.601692199707) &lt; 10">
-		<Lua>SetCVar("autoLootDefault", "1"); print("Autoloot On");</Lua>	
-		<InteractWithClosestGameObject GameObjectId="1571" />
-		<BotSleep Value="5500" />
+	<If Condition="Data.HasActiveQuest('Rot Hide Clues', 439) == false and Data.HasCompletedQuest('Rot Hide Clues', 439) == false">
+		<TakeQuestFromObject QuestId="439" QuestName="Rot Hide Clues" X="688.36700439453" Y="996.33862304688" Z="34.635623931885" DestinationMap="0" />
 	</If>
-	</While>
-	<If Condition="Data.HasActiveQuest('Return to Quinn', 430) == true and Data.AllQuestObjectivesAreComplete('Return to Quinn', 430) == true">
-		<ReturnQuest NpcName="Quinn Yorick" QuestId="430" QuestName="Return to Quinn" DestinationMap="0" />
-	</If>	
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 422) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 422) == true">
-		<ReturnQuest NpcName="Dalar Dawnweaver" QuestId="422" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Rot Hide Clues', 439) == true and Data.AllQuestObjectivesAreComplete('Rot Hide Clues', 439) == true">
+		<ReturnQuest NpcName="High Executor Hadrec" QuestId="439" QuestName="Rot Hide Clues" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 423) == false and Data.HasCompletedQuest('Arugal\'s Folly', 423) == false">
-		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="423" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('Rot Hide Ichor', 443) == false and Data.HasCompletedQuest('Rot Hide Ichor', 443) == false">
+		<TakeQuest NpcName="High Executor Hadrec" QuestId="443" QuestName="Rot Hide Ichor" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 423) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 423) == false">
+	<If Condition="Data.HasActiveQuest('The Engraved Ring', 440) == false and Data.HasCompletedQuest('The Engraved Ring', 440) == false">
+		<TakeQuest NpcName="High Executor Hadrec" QuestId="440" QuestName="The Engraved Ring" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Rot Hide Ichor', 443) == true and Data.AllQuestObjectivesAreComplete('Rot Hide Ichor', 443) == false">
 		<!-- Objective Settings -->
 		<ClearHotspots />
 		<SetTargetingMode Mode="Around Points" />
 		<!-- Monsterfilter -->
 		<ClearMonsterFilter/>
-		<SetMonsterFilterMode Mode="Blacklist" />
-		<AddMonsterFilterName Value="Son of Arugal" />
+		<SetMonsterFilterMode Mode="None" />
 		<!-- Blackspots -->
-		<AddBlackspot X="774.61907958984" Y="1627.5046386719" Z="30.765331268311" Range="32" />
-		<AddBlackspot X="729.55114746094" Y="1467.1097412109" Z="62.36311340332" Range="50" />
 		<!-- Hotspots -->
-		<AddHotspot X="852.462890625" Y="1536.7828369141" Z="35.263721466064" Range="100" />
-		<AddHotspot X="815.04626464844" Y="1677.3400878906" Z="26.33935546875" Range="100" />
-		<AddHotspot X="835.67669677734" Y="1755.6185302734" Z="17.118156433105" Range="100" />
-		<AddHotspot X="944.62884521484" Y="1813.9229736328" Z="10.386102676392" Range="100" />
-		<AddHotspot X="1031.5065917969" Y="1888.6196289063" Z="8.7232418060303" Range="100" />		
-		<While Condition="Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 423) == false" >
+		<AddHotspot X="703.234375" Y="613.90234375" Z="43.874622344971" Range="200" />		
+		<While Condition="Data.AllQuestObjectivesAreComplete('Rot Hide Ichor', 443) == false" >
 			<Wait Value="100" />
 		</While>
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 423) == true and Data.AllQuestObjectivesAreComplete('Arugal\'s Folly', 423) == true">
-		<AddBlackspot X="729.55114746094" Y="1467.1097412109" Z="62.36311340332" Range="50" />
-		<ReturnQuest NpcName="Dalar Dawnweaver" QuestId="423" QuestName="Arugal\'s Folly" DestinationMap="0" />
+	<If Condition="Data.GetItemCountByName('A Talking Head') == 0 and Data.HasActiveQuest('Resting in Pieces', 460) == false and Data.HasCompletedQuest('Resting in Pieces', 460) == false">
+		<!-- Objective Settings -->
+		<ClearHotspots />
+		<SetTargetingMode Mode="Around Points" />
+		<!-- Monsterfilter -->
+		<ClearMonsterFilter/>
+		<SetMonsterFilterMode Mode="None" />
+		<!-- Blackspots -->
+		<!-- Hotspots -->
+		<AddHotspot X="703.234375" Y="613.90234375" Z="43.874622344971" Range="200" />		
+		<While Condition="Data.GetItemCountByName('A Talking Head') == 0" >
+			<Wait Value="100" />
+		</While>
 	</If>
-	<If Condition="Data.HasActiveQuest('Arugal\'s Folly', 424) == false and Data.HasCompletedQuest('Arugal\'s Folly', 424) == false">
-		<TakeQuest NpcName="Dalar Dawnweaver" QuestId="424" QuestName="Arugal\'s Folly" DestinationMap="0" />
+<!--	<While Condition="Data.GetItemCountByName('A Talking Head') == 1 and Data.HasActiveQuest('Resting in Pieces', 460) == false and Data.HasCompletedQuest('Resting in Pieces', 460) == false">
+		<UseItem ItemId="3317" />
+		<BotSleep Value="1000" />
+		<Lua>AcceptQuest()</Lua>
+		<BotSleep Value="1000" />
+		<Wait Value="100" />
+	</While> -->
+	<If Condition="Data.HasActiveQuest('Rot Hide Origins', 444) == true and Data.AllQuestObjectivesAreComplete('Rot Hide Origins', 444) == true">
+		<ReturnQuest NpcName="Bethor Iceshard" QuestId="444" QuestName="Rot Hide Origins" DestinationMap="0" />
 	</If>
-
-
+	<If Condition="Data.HasActiveQuest('Thule Ravenclaw', 446) == false and Data.HasCompletedQuest('Thule Ravenclaw', 446) == false">
+		<TakeQuest NpcName="Bethor Iceshard" QuestId="446" QuestName="Thule Ravenclaw" DestinationMap="0" />
+	</If>	
+	<If Condition="Data.HasActiveQuest('The Engraved Ring', 440) == true and Data.AllQuestObjectivesAreComplete('The Engraved Ring', 440) == true">
+		<ReturnQuest NpcName="Magistrate Sevren" QuestId="440" QuestName="The Engraved Ring" DestinationMap="0" />
+	</If>	
+	<If Condition="Data.HasActiveQuest('Raleigh and the Undercity', 441) == false and Data.HasCompletedQuest('Raleigh and the Undercity', 441) == false">
+		<TakeQuest NpcName="Magistrate Sevren" QuestId="441" QuestName="Raleigh and the Undercity" DestinationMap="0" />
+	</If>	
+	<If Condition="Data.HasActiveQuest('Raleigh and the Undercity', 441) == true and Data.AllQuestObjectivesAreComplete('Raleigh and the Undercity', 441) == true">
+		<ReturnQuest NpcName="Raleigh Andrean" QuestId="441" QuestName="Raleigh and the Undercity" DestinationMap="0" />
+	</If>		
+	<If Condition="Data.HasActiveQuest('A Husband's Revenge', 530) == false and Data.HasCompletedQuest('A Husband's Revenge', 530) == false">
+		<TakeQuest NpcName="Raleigh Andrean" QuestId="530" QuestName="A Husband's Revenge" DestinationMap="0" />
+	</If>	
+	<If Condition="Data.HasActiveQuest('Thule Ravenclaw', 446) == true and Data.AllQuestObjectivesAreComplete('Thule Ravenclaw', 446) == true">
+		<ReturnQuest NpcName="Apothecary Renferrel" QuestId="446" QuestName="Thule Ravenclaw" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Report to Hadrec', 448) == false and Data.HasCompletedQuest('Report to Hadrec', 448) == false">
+		<TakeQuest NpcName="Apothecary Renferrel" QuestId="448" QuestName="Report to Hadrec" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Report to Hadrec', 448) == true and Data.AllQuestObjectivesAreComplete('Report to Hadrec', 448) == true">
+		<ReturnQuest NpcName="High Executor Hadrec" QuestId="448" QuestName="Report to Hadrec" DestinationMap="0" />
+	</If>	
 </ShadowProfile>
