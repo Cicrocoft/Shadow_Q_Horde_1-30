@@ -1,4 +1,4 @@
-<ShadowProfile Condition="Data.AllQuestObjectivesAreComplete('Proof of Demise', 374) == false">
+<ShadowProfile Condition="Data.AllQuestObjectivesAreComplete('Speak with Sevren', 355) == false or Data.HasCompletedQuest('At War With The Scarlet Crusade', 427) == false">
 
 	<!-- Bot Settings -->
 	<SetBaseSettings />
@@ -121,6 +121,42 @@
 	<If Condition="Data.HasActiveQuest('At War With The Scarlet Crusade', 427) == false and Data.HasCompletedQuest('At War With The Scarlet Crusade', 427) == false">
 		<TakeQuest NpcName="Executor Zygand" QuestId="427" QuestName="At War With The Scarlet Crusade" DestinationMap="0" />
 	</If>
+    <If Condition="Data.HasActiveQuest('Deaths in the Family') == true and Data.AllQuestObjectivesAreComplete('Deaths in the Family') == false">
+        <ClearHotspots />
+     <SetTargetingMode Mode="Around Points" />
+       <AddHotspot X="2751.5087890625" Y="793.90386962891" Z="114.36695098877" Range="150" />
+        <ClearMonsterFilter/>
+        <SetMonsterFilterMode Mode="Whitelist" />
+		<AddMonsterFilterName Value="Nissa Agamand" />
+        <While Condition="Data.GetItemCountByName('Nissa\'s Remains') == 0" >
+            <Wait Value="100" />
+        </While>
+
+        <ClearMonsterFilter/>
+        <SetMonsterFilterMode Mode="Whitelist" />
+		<AddMonsterFilterName Value="Gregor Agamand" />
+    <SetTargetingMode Mode="Around Points" />
+        <ClearHotspots />
+         <AddBlackspot X="2751.5087890625" Y="793.90386962891" Z="114.36695098877" Range="35" />
+		<AddHotspot X="2943.7211914063" Y="918.43988037109" Z="115.35106658936" Range="150" />
+
+        <While Condition="Data.GetItemCountByName('Gregor\'s Remains') == 0" >
+            <Wait Value="100" />
+        </While>
+
+        <ClearMonsterFilter/>
+        <SetEnableMonsterLevelFilter Value="false"/>
+        <SetMonsterFilterMode Mode="Whitelist" />
+        <AddMonsterFilterName Value="Thurman Agamand"/>
+    <SetTargetingMode Mode="Around Points" />
+        <ClearHotspots />
+        <AddHotspot X="2898.1623535156" Y="907.87951660156" Z="115.08913421631" Range="150" />
+        <AddHotspot X="2831.2055664063" Y="1045.0550537109" Z="111.33544921875" Range="150" />
+        
+        <While Condition="Data.GetItemCountByName('Thurman\'s Remains') == 0" >
+            <Wait Value="100" />
+        </While>
+    </If>
 	<If Condition="Data.HasActiveQuest('A New Plague', 368) == true and Data.AllQuestObjectivesAreComplete('A New Plague', 368) == false">
 		<!-- Objective Settings -->
 		<ClearHotspots />
@@ -173,7 +209,7 @@
      <SetTargetingMode Mode="Around Points" />
         <SetEnableMonsterLevelFilter Value="true"/>
         <SetMonsterAboveMyLevel Value="2"/>
-        <SetMonsterBelowMyLevel Value="2"/>
+        <SetMonsterBelowMyLevel Value="9"/>
 		<SetMonsterFilterMode Mode="Whitelist" />
 		<AddMonsterFilterName Value="Scarlet Warrior" />
         <ClearHotspots />
@@ -186,5 +222,17 @@
     </If> 
 	<If Condition="Data.HasActiveQuest('Proof of Demise', 374) == true and Data.AllQuestObjectivesAreComplete('Proof of Demise', 374) == true">
 		<ReturnQuest NpcName="Deathguard Burgess" QuestId="374" QuestName="Proof of Demise" DestinationMap="0" />
+	</If>	
+	<If Condition="Data.HasActiveQuest('Deaths in the Family', 354) == true and Data.AllQuestObjectivesAreComplete('Deaths in the Family', 354) == true">
+		<ReturnQuest NpcName="Coleman Farthing" QuestId="354" QuestName="Deaths in the Family" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('Speak with Sevren', 355) == false and Data.HasCompletedQuest('Speak with Sevren', 355) == false">
+		<TakeQuest NpcName="Coleman Farthing" QuestId="355" QuestName="Speak with Sevren" DestinationMap="0" />
 	</If>		
+		<If Condition="Data.HasActiveQuest('Speak with Sevren', 355) == true and Data.AllQuestObjectivesAreComplete('Speak with Sevren', 355) == true">
+		<ReturnQuest NpcName="Magistrate Sevren" QuestId="355" QuestName="Speak with Sevren" DestinationMap="0" />
+	</If>
+	<If Condition="Data.HasActiveQuest('The Family Crypt', 408) == false and Data.HasCompletedQuest('The Family Crypt', 408) == false">
+		<TakeQuest NpcName="Magistrate Sevren" QuestId="408" QuestName="The Family Crypt" DestinationMap="0" />
+	</If>
 </ShadowProfile>

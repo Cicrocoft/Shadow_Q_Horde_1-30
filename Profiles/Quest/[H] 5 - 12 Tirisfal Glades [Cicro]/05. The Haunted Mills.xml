@@ -106,7 +106,7 @@
 	<ClearRestockItems/>
 	<!-- Bullets/Arrows -->
 
-    <If Condition="not Data.HasActiveQuest(nil, 398)" >
+    <If Condition="not Data.HasActiveQuest(nil, 398) and Data.HasCompletedQuest(nil, 398) == false" >
         <TakeQuestFromObject QuestName="Wanted: Maggot Eye" X="2284.8542480469" Y="289.02151489258" Z="35.182540893555" />
     </If>
     
@@ -176,42 +176,7 @@
         </While>
     </If>
 
-    <If Condition="Data.HasActiveQuest('Deaths in the Family') == true and Data.AllQuestObjectivesAreComplete('Deaths in the Family') == false">
-        <ClearHotspots />
-     <SetTargetingMode Mode="Around Points" />
-       <AddHotspot X="2751.5087890625" Y="793.90386962891" Z="114.36695098877" Range="150" />
-        <ClearMonsterFilter/>
-        <SetMonsterFilterMode Mode="Whitelist" />
-		<AddMonsterFilterName Value="Nissa Agamand" />
-        <While Condition="Data.GetItemCountByName('Nissa\'s Remains') == 0" >
-            <Wait Value="100" />
-        </While>
 
-        <ClearMonsterFilter/>
-        <SetMonsterFilterMode Mode="Whitelist" />
-		<AddMonsterFilterName Value="Gregor Agamand" />
-    <SetTargetingMode Mode="Around Points" />
-        <ClearHotspots />
-         <AddBlackspot X="2751.5087890625" Y="793.90386962891" Z="114.36695098877" Range="35" />
-		<AddHotspot X="2943.7211914063" Y="918.43988037109" Z="115.35106658936" Range="150" />
-
-        <While Condition="Data.GetItemCountByName('Gregor\'s Remains') == 0" >
-            <Wait Value="100" />
-        </While>
-
-        <ClearMonsterFilter/>
-        <SetEnableMonsterLevelFilter Value="false"/>
-        <SetMonsterFilterMode Mode="Whitelist" />
-        <AddMonsterFilterName Value="Thurman Agamand"/>
-    <SetTargetingMode Mode="Around Points" />
-        <ClearHotspots />
-        <AddHotspot X="2898.1623535156" Y="907.87951660156" Z="115.08913421631" Range="150" />
-        <AddHotspot X="2831.2055664063" Y="1045.0550537109" Z="111.33544921875" Range="150" />
-        
-        <While Condition="Data.GetItemCountByName('Thurman\'s Remains') == 0" >
-            <Wait Value="100" />
-        </While>
-    </If>
 
 
 	<If Condition="Data.HasActiveQuest('The Mills Overrun', 426) == true and Data.AllQuestObjectivesAreComplete('The Mills Overrun', 426) == true">
@@ -221,18 +186,7 @@
 	<If Condition="Data.HasActiveQuest('The Haunted Mills', 362) == true and Data.AllQuestObjectivesAreComplete('The Haunted Mills', 362) == true">
 		<ReturnQuest NpcName="Coleman Farthing" QuestId="362" QuestName="The Haunted Mills" DestinationMap="0" />
 	</If>
-	<If Condition="Data.HasActiveQuest('Deaths in the Family', 354) == true and Data.AllQuestObjectivesAreComplete('Deaths in the Family', 354) == true">
-		<ReturnQuest NpcName="Coleman Farthing" QuestId="354" QuestName="Deaths in the Family" DestinationMap="0" />
-	</If>
-	<If Condition="Data.HasActiveQuest('Speak with Sevren', 355) == false and Data.HasCompletedQuest('Speak with Sevren', 355) == false">
-		<TakeQuest NpcName="Coleman Farthing" QuestId="355" QuestName="Speak with Sevren" DestinationMap="0" />
-	</If>
-	<If Condition="Data.HasActiveQuest('Speak with Sevren', 355) == true and Data.AllQuestObjectivesAreComplete('Speak with Sevren', 355) == true">
-		<ReturnQuest NpcName="Magistrate Sevren" QuestId="355" QuestName="Speak with Sevren" DestinationMap="0" />
-	</If>
-	<If Condition="Data.HasActiveQuest('The Family Crypt', 408) == false and Data.HasCompletedQuest('The Family Crypt', 408) == false">
-		<TakeQuest NpcName="Magistrate Sevren" QuestId="408" QuestName="The Family Crypt" DestinationMap="0" />
-	</If>
+
 	<If Condition="Data.HasActiveQuest('Graverobbers', 358) == false and Data.HasCompletedQuest('Graverobbers', 358) == false">
 		<TakeQuest NpcName="Magistrate Sevren" QuestId="358" QuestName="Graverobbers" DestinationMap="0" />
 	</If>      

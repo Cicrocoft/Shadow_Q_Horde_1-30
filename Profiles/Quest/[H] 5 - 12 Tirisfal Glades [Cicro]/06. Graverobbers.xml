@@ -1,4 +1,4 @@
-<ShadowProfile Condition="not Data.HasCompletedQuest('Graverobbers') and not Data.AllQuestObjectivesAreComplete('Graverobbers')">
+<ShadowProfile Condition="not Data.HasCompletedQuest('Graverobbers') or not Data.HasCompletedQuest('A New Plague', 368)">
     <SetBaseSettings />
 
 	<If Condition="Data.HasActiveQuest('Graverobbers', 358) == false and Data.HasCompletedQuest('Graverobbers', 358) == false">
@@ -6,9 +6,6 @@
 	</If>
 	<If Condition="Data.HasActiveQuest('Wanted: Maggot Eye', 398) == false and Data.HasCompletedQuest('Wanted: Maggot Eye', 398) == false">
 		<TakeQuestFromObject QuestId="398" QuestName="Wanted: Maggot Eye" X="2283.2470703125" Y="289.78109741211" Z="35.182312011719" DestinationMap="0" />
-	</If>
-	<If Condition="Data.HasActiveQuest('A New Plague', 369) == false and Data.HasCompletedQuest('A New Plague', 369) == false">
-		<TakeQuest NpcName="Apothecary Johaan" QuestId="369" QuestName="A New Plague" DestinationMap="0" />
 	</If>
 	<If Condition="Data.HasActiveQuest('Doom Weed', 5482) == false and Data.HasCompletedQuest('Doom Weed', 5482) == false">
 		<TakeQuest NpcName="Junior Apothecary Holland" QuestId="5482" QuestName="Doom Weed" DestinationMap="0" />
@@ -104,9 +101,12 @@
 </If>
 
 
-	<If Condition="Data.HasActiveQuest('A New Plague', 369) == true and Data.AllQuestObjectivesAreComplete('A New Plague', 369) == true">
-		<ReturnQuest NpcName="Apothecary Johaan" QuestId="369" QuestName="A New Plague" DestinationMap="0" />
+	<If Condition="Data.HasActiveQuest('A New Plague', 368) == true and Data.AllQuestObjectivesAreComplete('A New Plague', 368) == true">
+		<ReturnQuest NpcName="Apothecary Johaan" QuestId="368" QuestName="A New Plague" DestinationMap="0" />
 	</If>
+	<If Condition="Data.HasActiveQuest('A New Plague', 369) == false and Data.HasCompletedQuest('A New Plague', 369) == false">
+		<TakeQuest NpcName="Apothecary Johaan" QuestId="369" QuestName="A New Plague" DestinationMap="0" />
+	</If>    
 	<If Condition="Data.HasActiveQuest('Wanted: Maggot Eye', 398) == true and Data.AllQuestObjectivesAreComplete('Wanted: Maggot Eye', 398) == true">
 		<ReturnQuest NpcName="Executor Zygand" QuestId="398" QuestName="Wanted: Maggot Eye" DestinationMap="0" />
 	</If>

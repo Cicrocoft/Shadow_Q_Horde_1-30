@@ -117,6 +117,7 @@
 	<!-- End Restock -->
 
     <If Condition="not Data.HasActiveQuest('The Damned') and not Data.HasCompletedQuest('The Damned')">
+		<Lua>CloseGossip()</Lua>
         <TakeQuest NpcName="Novice Elreth" QuestName="The Damned" />
     </If>
     <If Condition="Data.HasActiveQuest('The Damned') or UnitLevel('player') &lt; 3 or UnitXP('player') &lt;= 1100 and UnitXPMax('player') == 1400" >
