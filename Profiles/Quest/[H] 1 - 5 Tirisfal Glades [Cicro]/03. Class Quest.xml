@@ -21,21 +21,21 @@
         <TakeQuest NpcName="Shadow Priest Sarvis" QuestName="Simple Scroll" />
     </If>
 
-    <If Condition="Data.HasActiveQuest('Encypted Scroll') and Data.QuestObjectiveIsComplete('Encrypted Scroll', 1) and Data.PlayerClass() == WoWClass.Rogue">
-        <ReturnQuest NpcName="David Trias" QuestName="Encrypted Scroll" />
-    </If>
-    <If Condition="Data.HasActiveQuest('Glyphic Scroll') and Data.QuestObjectiveIsComplete('Glyphic Scroll', 1) and Data.PlayerClass() == WoWClass.Mage">
+	<If Condition="Data.HasActiveQuest('Encrypted Scroll', 3096) == true and Data.PlayerClass() == WoWClass.Rogue">
+		<ReturnQuest NpcName="David Trias" QuestId="3096" QuestName="Encrypted Scroll" DestinationMap="0" />
+	</If>
+    <If Condition="Data.HasActiveQuest('Glyphic Scroll') and Data.PlayerClass() == WoWClass.Mage">
 		<Lua>CloseGossip()</Lua>    
         <ReturnQuest NpcName="Isabella" QuestName="Glyphic Scroll" />
     </If>
-    <If Condition="Data.HasActiveQuest('Hallowed Scroll') and Data.QuestObjectiveIsComplete('Hallowed Scroll', 1) and Data.PlayerClass() == WoWClass.Priest">
+    <If Condition="Data.HasActiveQuest('Hallowed Scroll') and Data.PlayerClass() == WoWClass.Priest">
         <ReturnQuest NpcName="Dark Cleric Duesten" QuestName="Hallowed Scroll" />
     </If>
-    <If Condition="Data.HasActiveQuest('Tainted Scroll') and Data.QuestObjectiveIsComplete('Tainted Scroll', 1) and Data.PlayerClass() == WoWClass.Warlock">
+    <If Condition="Data.HasActiveQuest('Tainted Scroll') and Data.PlayerClass() == WoWClass.Warlock">
 		<Lua>CloseGossip()</Lua>    
         <ReturnQuest NpcName="Maximillion" QuestName="Tainted Scroll" />
     </If>
-    <If Condition="Data.HasActiveQuest('Simple Scroll') and Data.QuestObjectiveIsComplete('Simple Scroll', 1) and Data.PlayerClass() == WoWClass.Warrior">
+    <If Condition="Data.HasActiveQuest('Simple Scroll') and Data.PlayerClass() == WoWClass.Warrior">
         <ReturnQuest NpcName="Dannal Stern" QuestName="Simple Scroll" />
     </If>	
 </ShadowProfile>

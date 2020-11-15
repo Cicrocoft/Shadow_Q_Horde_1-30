@@ -7,7 +7,7 @@
     <If Condition="not Data.HasActiveQuest('A New Plague')">
         <TakeQuest NpcName="Apothecary Johaan" QuestName="A New Plague" />
     </If>
-
+    <ReturnQuest NpcName="Innkeeper Renee" QuestName="A Rogue's Deal" />
     <If Condition="not Data.HasActiveQuest('The Haunted Mills')">
         <TakeQuest NpcName="Coleman Farthing" QuestName="The Haunted Mills" />
     </If>
@@ -28,6 +28,6 @@
 		<NPCInteract NpcName="Oliver Dwor" DestinationMap="0" />	
 		<BuyItem ItemId="2494" ItemName="Stiletto" NpcId="2136" NpcName="Oliver Dwor" Amount="1" />	
 	</If>
-    <ReturnQuest NpcName="Innkeeper Renee" QuestName="A Rogue's Deal" />
+
     <ReturnQuest NpcName="Captured Scarlet Zealot" QuestId="407" />
 </ShadowProfile>
