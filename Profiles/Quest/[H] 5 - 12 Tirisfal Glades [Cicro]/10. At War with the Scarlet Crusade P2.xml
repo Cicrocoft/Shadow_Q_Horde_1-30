@@ -123,6 +123,7 @@
 		<!-- Objective Settings -->
 		<ClearHotspots />
 		<SetTargetingMode Mode="Around Points" />
+		<SetEnableIgnoreIfAgroAround Value="false" />
 		<!-- Monsterfilter -->
 		<ClearMonsterFilter/>
 		<SetMonsterFilterMode Mode="Whitelist" />
@@ -153,6 +154,7 @@
 			<Wait Value="100" />
 		</While>
 	</If>
+	<SetEnableIgnoreIfAgroAround Value="true" />
 	<If Condition="Data.HasActiveQuest('At War With The Scarlet Crusade', 370) == true and Data.AllQuestObjectivesAreComplete('At War With The Scarlet Crusade', 370) == true">
 		<ReturnQuest NpcName="Executor Zygand" QuestId="370" QuestName="At War With The Scarlet Crusade" DestinationMap="0" />
 	</If>
