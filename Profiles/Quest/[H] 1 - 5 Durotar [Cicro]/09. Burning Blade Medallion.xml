@@ -131,8 +131,8 @@
 		</If>
 		<If Condition="Nav.RangeFromMeXYZ(-86.998840332031, -4276.0732421875, 65.438339233398) &lt; 20">
 			<Lua>SetCVar("autoLootDefault", "1"); print("Autoloot On");</Lua>
-			<InteractWithClosestGameObject GameObjectId="178087" />
-			<BotSleep Value="5500" />
+			<InteractWithClosestGameObject />
+			<BotSleep Value="2500" />
 		</If>
 	</While>	
     <SetEnableAutoLoot Value="false" /> 
